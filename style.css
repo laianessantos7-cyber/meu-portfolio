@@ -496,3 +496,146 @@ body::after {
 html {
   scroll-behavior: smooth;
 }
+/* ========================= */
+/* RESPONSIVIDADE MOBILE */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    white-space: normal;
+    border-right: none;
+    animation: aparecer 1s ease;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: 0 auto 25px;
+  }
+
+  .botoes {
+    justify-content: center;
+  }
+
+  .foto-area {
+    margin-top: 25px;
+  }
+
+  .foto-area img,
+  .glow {
+    width: 260px;
+    height: 340px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .secao {
+    width: 92%;
+    padding: 28px;
+    margin: 35px auto;
+  }
+
+  .secao h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .secao p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contatos {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .tag {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .foto-area img,
+  .glow {
+    width: 220px;
+    height: 300px;
+    border-radius: 28px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .projeto {
+    padding: 22px;
+  }
+
+  .contatos a {
+    width: 100%;
+    text-align: center;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 18px;
+  }
+}
