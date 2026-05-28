@@ -270,3 +270,229 @@ footer {
     padding: 30px;
   }
 }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.25);
+}
+
+.card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.card span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* ========================= */
+/* ANIMAÇÕES */
+/* ========================= */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.secao,
+.hero-text,
+.foto-area {
+  animation: aparecer 1s ease;
+}
+
+/* ========================= */
+/* EFEITO GLASS */
+/* ========================= */
+
+.secao {
+  backdrop-filter: blur(15px);
+  transition: 0.4s;
+}
+
+.secao:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================= */
+/* EFEITO NOS BOTÕES */
+/* ========================= */
+
+.btn,
+.contatos a,
+.projeto a {
+  transition: 0.3s;
+}
+
+.btn:hover,
+.contatos a:hover,
+.projeto a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+}
+
+/* ========================= */
+/* EFEITO NOS PROJETOS */
+/* ========================= */
+
+.projeto {
+  position: relative;
+  overflow: hidden;
+}
+
+.projeto::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(236, 72, 153, 0.12),
+    transparent
+  );
+
+  top: -120%;
+  left: -120%;
+  transform: rotate(25deg);
+  transition: 0.8s;
+}
+
+.projeto:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+/* ========================= */
+/* FOTO COM MOVIMENTO */
+/* ========================= */
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.foto-area img {
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+/* ========================= */
+/* BRILHO NO FUNDO */
+/* ========================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 600px;
+  height: 600px;
+
+  background: rgba(236, 72, 153, 0.12);
+
+  border-radius: 50%;
+
+  top: -200px;
+  left: -200px;
+
+  filter: blur(120px);
+
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 600px;
+  height: 600px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  border-radius: 50%;
+
+  bottom: -250px;
+  right: -200px;
+
+  filter: blur(120px);
+
+  z-index: -1;
+}
+
+/* ========================= */
+/* EFEITO DIGITAÇÃO */
+/* ========================= */
+
+.hero h1 {
+  overflow: hidden;
+  border-right: 3px solid #f9a8d4;
+  white-space: nowrap;
+
+  animation:
+    typing 4s steps(40, end),
+    blink 0.8s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ========================= */
+/* EFEITO SCROLL */
+/* ========================= */
+
+html {
+  scroll-behavior: smooth;
+}
