@@ -203,25 +203,95 @@
 
 </div>
         </div>
-      </div>
-    </section>
+     <section id="contato" class="secao contato">
+  
 
-    <section id="contato" class="secao contato">
-      <h2>Contato</h2>
-      <p>Estou aberta a oportunidades, networking e novos projetos.</p>
 
-      <div class="contatos">
-        <a href="mailto:laianee12santos@gmail.com">E-mail</a>
-        <a href="https://github.com/laianessantos7-cyber/" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/laiane-silva-dos-santos-773509379/" target="_blank">LinkedIn</a>
-      </div>
-    </section>
-  </main>
+  <section id="contato" class="secao contato">
+  <h2>Contato</h2>
 
-  <footer>
-    <p>© 2026 - Desenvolvido por Laiane Silva dos Santos</p>
-  </footer>
+  <p>
+    Estou aberta a oportunidades, networking e novos projetos.
+  </p>
 
-  <script src="script.js"></script>
-</body>
+  <form id="form-contato" class="form-contato">
+
+    <input
+      type="text"
+      name="nome"
+      placeholder="Digite seu nome"
+      required
+    >
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Digite seu e-mail"
+      required
+    >
+
+    <textarea
+      name="mensagem"
+      rows="6"
+      placeholder="Digite sua mensagem"
+      required
+    ></textarea>
+
+    <button type="submit">
+      Enviar Mensagem
+    </button>
+
+  </form>
+
+  <div class="contatos">
+    <a href="mailto:laianee12santos@gmail.com">
+      E-mail
+    </a>
+
+    <a href="https://github.com/laianessantos7-cyber/" target="_blank">
+      GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/laiane-silva-dos-santos-773509379/" target="_blank">
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("t0YnZ4LxChWI-poJO");
+
+const formulario = document.getElementById("form-contato");
+
+formulario.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  emailjs.sendForm(
+    "service_43vo6z6",
+    "template_fbg5zme",
+    this
+  )
+  .then(() => {
+
+    alert("Mensagem enviada com sucesso!");
+
+    formulario.reset();
+
+  })
+  .catch((error) => {
+
+    console.error(error);
+
+    alert("Erro ao enviar mensagem.");
+
+  });
+
+});
+</script>
+
+ 
+</section>
 </html>
